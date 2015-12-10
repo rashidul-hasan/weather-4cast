@@ -1,7 +1,7 @@
 import json
 from urllib.request import urlopen
 from datetime import datetime, timedelta
-from flask import Flask, render_template, request, make_response
+from flask import (Flask, render_template, request, make_response, url_for)
 from flask.ext.bootstrap import Bootstrap
 
 app = Flask(__name__)
@@ -15,6 +15,7 @@ def get_weather(city):
 
 @app.route('/')
 def index():
+    from flask import request
     search_city = request.args.get('searchcity')
     if not search_city:
         search_city = request.cookies.get('last_city')
