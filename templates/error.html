@@ -35,26 +35,9 @@
 {% block content %}
 	<div class="container">
 		<div class="row">
-			<h1>7 Days Weather for <span class="city">{% if city %}{{ city|title }}, {{country}}{% endif %}</span></h1>
-			<table class="table">
 
-				<thead>
-					<tr><th>Date</th><th>Minimum</th><th>Maximum</th><th>Description</th><th>Icon</th></tr>
-				</thead>
+			<h2>{{ user_input }} not found, Please enter a valid city name</h2>
 
-				<tbody>
-					{% for item in data %}
-						<tr>
-							<th scope="row">{{ item[0] }}</th>
-							<td>{{ item[1] }}&#8451;</td>
-							<td>{{ item[2] }}&#8451;</td>
-							<td>{{ item[3]|title }}</td>
-							<td><img src="http://openweathermap.org/img/w/{{item[4]}}.png" alt="{{ item[3] }}"></td>
-						</tr>
-					{% endfor %}
-				</tbody>
-
-			</table>
 		</div>
 		<footer class="footer">
         	<p>&copy; 2015 Rashidul Hasan</p>
